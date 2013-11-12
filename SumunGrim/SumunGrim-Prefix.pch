@@ -1,0 +1,31 @@
+//
+// Prefix header for all source files of the 'SumunGrim' target in the 'SumunGrim' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "KJUIViewController.h"
+    #import "SumunDefine.h"
+#endif
+
+
+#ifdef DEBUG
+#   define ILog(fmt, ...) //NSLog(@"INFO %s[%d] %@", __PRETTY_FUNCTION__, __LINE__,[NSString stringWithFormat:(fmt), ##__VA_ARGS__]);
+#   define DLog(fmt, ...) NSLog(@"DEBUG%s[%d] %@", __PRETTY_FUNCTION__, __LINE__,[NSString stringWithFormat:(fmt), ##__VA_ARGS__]);
+#   define TLog(fmt, ...) NSLog(@"TRACE%s[%d] %@", __PRETTY_FUNCTION__, __LINE__,[NSString stringWithFormat:(fmt), ##__VA_ARGS__]);
+#   define WLog(fmt, ...) NSLog(@"WARN %s[%d] %@", __PRETTY_FUNCTION__, __LINE__,[NSString stringWithFormat:(fmt), ##__VA_ARGS__]);
+#else
+#   define ILog(...)
+#   define DLog(...)
+#   define TLog(...)
+#   define WLog(...)
+#endif
+
+#define ELog(fmt, ...) NSLog(@"ERROR%s[%d] %@", __PRETTY_FUNCTION__, __LINE__,[NSString stringWithFormat:(fmt), ##__VA_ARGS__]);
